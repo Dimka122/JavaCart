@@ -24,7 +24,7 @@ namespace Carta.Controllers
             uc.Carts.Remove(uc.Carts.Find(id));
             uc.SaveChanges();
         }
-        
+        [HttpPut]]
     }
 
 }
