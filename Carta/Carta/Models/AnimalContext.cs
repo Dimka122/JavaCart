@@ -14,7 +14,7 @@ namespace Carta.Models
                 //.First()
                 //.TryGet("connStr", out var connStr);
                 //optionsBuilder.UseSqlServer(connStr);
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Data Source=sql8003.site4now.net;User ID=db_a8efac_dimon_admin;Password=********;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
     }
