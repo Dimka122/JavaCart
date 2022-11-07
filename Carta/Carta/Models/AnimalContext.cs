@@ -9,12 +9,12 @@ namespace Carta.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //new ConfigurationBuilder().AddUserSecrets<AnimalContext>()
-                //.Build()
-                //.Providers
-                //.First()
-                //.TryGet("connStr", out var connStr);
-                //optionsBuilder.UseSqlServer(connStr);
-            optionsBuilder.UseSqlServer("Data Source=sql8003.site4now.net;User ID=db_a8efac_dimon_admin;Password=********;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            //.Build()
+            //.Providers
+            //.First()
+            //.TryGet("connStr", out var connStr);
+            //optionsBuilder.UseSqlServer("Data Source=SQL5107.site4now.net;Initial Catalog=db_a8eeb3_dimon;User Id=db_a8eeb3_dimon_admin;Password=********");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Carta;Trusted_Connection=True;");
         }
 
     }

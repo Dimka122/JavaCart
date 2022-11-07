@@ -1,5 +1,6 @@
 ﻿using Carta.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Carta.Controllers
 {
@@ -15,8 +16,15 @@ namespace Carta.Controllers
             uc.Carts.Add(cart);
              uc.SaveChanges();
         }
+        //[HttpGet]
+        //public IEnumerable<Cart> Get() => new AnimalContext().Carts;
+
         [HttpGet]
-        public IEnumerable<Cart> Get() => new AnimalContext().Carts;
+        public async Task<ActionResult<IEnumerable<Cart>>> Get()
+        {
+            return await new AnimalContext().Carts.ToListAsync();
+        }
+
         [HttpDelete]
         public void Delete(int id)
         {
