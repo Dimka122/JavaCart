@@ -14,7 +14,7 @@ namespace Carta.Controllers
         {
             AnimalContext uc = new AnimalContext();
             uc.Carts.Add(cart);
-             uc.SaveChanges();
+            uc.SaveChanges();
         }
         //[HttpGet]
         //public IEnumerable<Cart> Get() => new AnimalContext().Carts;
@@ -24,6 +24,12 @@ namespace Carta.Controllers
         {
             return await new AnimalContext().Carts.ToListAsync();
         }
+        [HttpGet("{id}")]
+        public Cart Get(int id)
+        {
+            return new AnimalContext().Carts.Find(id);
+        }
+
 
         [HttpDelete]
         public void Delete(int id)
